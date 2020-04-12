@@ -1,0 +1,150 @@
+
+.aside-left{
+
+    background: $lightGreen;
+    border-bottom: 1.5px solid #fff;
+    font-weight: 300;
+    /* position: relative;
+    z-index: 10; */
+    min-height: 20vh;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:  
+    "logo social" 
+    "navigation navigation";
+   
+
+    @mixin  atExtraLarge{
+        height: 100%;
+        position: fixed;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1.5px solid #fff;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    &__logo{
+        grid-area: logo;
+        font-size: 1.3rem;
+    }
+
+
+    &__logo-label{
+        color: rgba(255,255,255,.9);
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        @mixin atMedium{
+            display: inline;
+        }
+
+        @mixin atExtraLarge{
+            display: block;
+            font-size: 2rem;
+        }
+    }
+
+    &__social{
+        grid-area: social;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 1.5rem;   
+    }
+
+    &__social-link{
+        margin-right: 1.8rem;
+        color: rgba(0,0,0,.8);
+        transition: all .3s;
+
+        @mixin atExtraLarge{
+            margin-right: 1rem;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+        &:hover{
+            color:#000;
+        }
+    }
+
+    .no-cssgrid &__social{
+        justify-content: center;
+    }
+
+    .no-cssgrid &__social-item{
+        padding: 0 1.2rem;
+        @mixin atExtraLarge{
+            padding: 0 0.625rem;
+        }
+    }
+
+   
+    &__navigation{
+        grid-area: navigation; 
+    }
+
+    &__list{     
+        font-size: 1.75rem;
+        text-align: center; 
+    }
+
+    .no-cssgrid &__list{
+        margin: 1.5rem 0; 
+
+        @mixin atExtraLarge{
+            margin:0; 
+        }
+    }
+
+
+     &__list-item{
+        padding: 0.625rem 0;
+         display: inline-block;
+
+         &:hover>.aside-left__list-link{
+            left: 0.9375rem;
+            color: #000;
+            }
+        
+        &:hover>.aside-left__list-link:before{
+            width: 1.875rem;
+            background: #000;
+        }
+     }
+
+    &__list-link{
+        /* outline: none; */
+        color: rgba(0,0,0,.7);
+        position: relative;
+        left: 0;
+        transition: all .3s;
+
+        &:before{
+            content: "";
+            position: absolute;
+            background: rgba(0,0,0,.7);
+            top: 50%;
+            left: -1.875rem;
+            height: 1px;
+            width: 0px;
+            transition: all .3s;
+        }
+
+        &--current{
+            color: #000;
+        }
+    }
+}
+
+
+
+
+
+
+

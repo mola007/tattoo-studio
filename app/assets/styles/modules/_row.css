@@ -1,0 +1,120 @@
+.row{
+
+    /* póżniej wyrzucić */
+    /* display: flex;
+    flex-wrap: wrap; */
+
+    @mixin atSmall{
+        &--flex-from-small{
+            display: flex;
+            flex-wrap:wrap;
+         }
+    }
+
+    @mixin atMedium{
+        &--flex-from-medium{
+            display: flex;
+            flex-wrap:wrap;
+         }
+    }
+
+    @mixin atLarge{
+        &--flex-from-large{
+            display: flex;
+            flex-wrap:wrap;
+         }
+    }
+
+    &--gutters-from-large{
+        margin-right: -65px;
+
+        &>div{
+            padding-right: 65px;
+        }
+    }
+
+     &__col{
+         width: 100%;
+
+         @mixin atSmall{
+            &--small-6{
+                width: 50%;    
+            }
+         }
+
+         @mixin atMedium{
+            &--medium-3{
+                width: 25%;    
+            }
+
+            &--medium-4{
+                width: 33.33%;    
+            }
+
+            &--medium-9{
+                width: 75%;    
+            }
+
+            &--pLeft-medium{    
+                padding-left: 2rem;
+            }
+         }
+
+         @mixin atLarge {
+
+            &--pRight-large{    
+                padding-right: 3.125rem;
+            }
+
+            &--pLeft-large{    
+                padding-left: 2rem;
+            }
+
+            &--padding-large{    
+                padding:.5rem;
+            }
+
+            &--large-2{
+                width: 16.66%;        
+            }
+
+            &--large-3{
+                width: 25%;        
+            }
+
+            &--large-4{
+                width: 33.33%;    
+            }
+
+            &--large-5{
+                width: 41.66%; 
+            }
+
+            &--large-7{
+                width: 58.33%; 
+            }
+
+            &--large-8{
+                width: 66.66%;      
+            }
+            
+            &--large-9{
+                width: 75%; 
+            }
+
+           
+         }
+
+         @mixin atExtraLarge {
+            &--extraLarge-12{
+                width: 100%;    
+            }
+    
+         }
+
+
+     } 
+
+   
+}
+
